@@ -11,7 +11,15 @@ use yii\base\Model;
 class CalculateForm extends Model{
     public $name;
     public $much;
-    public $date;
+
+
+    public function attributeLabels()
+    {
+        return [
+          'name' => 'Имя',
+          'much' => 'Объем отгрузки',
+        ];
+    }
 
 
 }

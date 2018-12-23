@@ -38,8 +38,9 @@ AppAsset::register($this);
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-left'], 
                 'items' => [
+                    ['label' => 'Внести суммы', 'url' => ['/main/summa']],
                     ['label' => 'Календарь по выплатам', 'url' => ['/main/index']],
-                    ['label' => 'Редактирование', 'url' => ['/main/calculate']],
+                    ['label' => 'Добавить компанию', 'url' => ['/main/calculate']],
                     
                 ],
             ]);     
