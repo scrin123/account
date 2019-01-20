@@ -7,22 +7,27 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
-use app\models\CalculateForm;
 use app\models\User;
-use app\models\Howmuch_owen;
-use app\models\Howmuch_owenForm;
+use app\models\Packs;
 
 class MainController extends Controller
 {
-protected $user;
+    protected $packs;
+
     public $layout = 'main';
+    public function __construct($id, $module, array $config = [])
+    {
+        $this->packs= new Packs();
+        parent::__construct($id, $module, $config);
+    }
 
     public function actionIndex()
     {
 
-        return $this->render('index');
+        $packs=$this->packs;
+        return $this->render('index',[
+            'packs' =>$packs::find()->all()
+        ]);
     }
 
 }
