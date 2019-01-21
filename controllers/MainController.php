@@ -30,7 +30,7 @@ class MainController extends Controller
         $packs = $this->packs;
         return $this->render('index',
             [
-            'packs' =>  $test=Packs::find()->joinWith('type')->asArray()->all()
+            'packs' => Packs::find()->all(),
         ]);
     }
 
@@ -38,11 +38,9 @@ class MainController extends Controller
     {
         $packs = $this->packs;
         $resource= new Resource();
-        $test=Packs::find()->joinWith('type')->asArray()->all();
         return $this->render('packs',
             [
-                'packs' => $packs::find()->where(['packs_id' =>Yii::$app->request->get('type')])->all(),
-                'resource'=>$test
+                'packs'=>Packs::findOne(2)//$packs::findOne(1)->res,
             ]
         );
     }

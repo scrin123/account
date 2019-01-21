@@ -22,16 +22,11 @@
                 <td><?= $value->trent ?> </td>
                 <td><?= $value->epheria ?> </td>
                 <td><?= $value->calf ?> </td>
-                <td><?=$value->type?></td>
+                <td><?=$value->types->name?></td>
             </tr>
 
         <? endforeach; ?>
-        <? foreach ($packs as $key => $value): ?>
-        <? foreach ($value as $key => $test): ?>
-            <? echo $key."====".var_dump($test)."<br>"?><? echo "asdfsdf".var_dump($test)?>
-        <? endforeach; ?>
 
-        <? endforeach; ?>
         </thead>
-    </table>
+    </table
 </div>

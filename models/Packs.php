@@ -8,6 +8,7 @@ use yii\db\ActiveRecord;
 use app\models\Resource;
 use app\models\Type;
 use app\models\Respacks;
+
 class Packs extends ActiveRecord
 {
 
@@ -20,17 +21,17 @@ class Packs extends ActiveRecord
     {
 
     }
-    public function getRes(){
+
+    public function getRes()
+    {
         return $this->hasMany(Respacks::className(),['packs_id'=>'packs_id']);
     }
-    public function getRes_packs(){
+    function getResource(){
         return $this->hasMany(Resource::className(),['resource_id'=>'resource_id'])->via('res');
     }
-    public function getTypepacks(){
-        return $this->hasMany(Typepacks::className(),['packs_id'=>'packs_id']);
-    }
-    public function getType(){
-        return $this->hasMany(TypeName::className(),['type_id'=>'type_id'])->via('typepacks');
+    function getTypes()
+    {
+        return $this->hasOne(Packstype::className(),['id'=>'type']);
     }
 }
 
