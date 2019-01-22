@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 use app\models\User;
 use app\models\Packs;
 use app\models\Resource;
+
 class MainController extends Controller
 {
     protected $packs;
@@ -28,19 +29,23 @@ class MainController extends Controller
     {
 
         $packs = $this->packs;
+        $user = new User();
         return $this->render('index',
             [
-            'packs' => Packs::find()->all(),
-        ]);
+                'users' => $user::findOne(1),
+                'packs' => Packs::find()->all(),
+            ]);
     }
 
     public function actionPacks()
     {
         $packs = $this->packs;
-        $resource= new Resource();
+        $resource = new Resource();
+        $type = Yii::$app->request->get('type');
         return $this->render('packs',
             [
-                'packs'=>Packs::findOne(2)//$packs::findOne(1)->res,
+
+                'packs' => Packs::findOne($type)
             ]
         );
     }
