@@ -48,6 +48,10 @@ class MainController extends Controller
             ]
         );
     }
+    public function actionAdd()
+    {
+        return $this->render('add');
+    }
 
 }
 
