@@ -35,13 +35,6 @@ class Packs extends ActiveRecord
     }
     static function calculatePrice($count,$price)
     {
-      //  $allPrice=Resource::find()->where('resource_id=1 or resource_id=4')->all();
-      //  $price=0;
-//        foreach ($allPrice as $index => $value)
-//        {
-//            $price=$price+$value->price;
-//        }
-
         return $price=$count*$price;
     }
 }
