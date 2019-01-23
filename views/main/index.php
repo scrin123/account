@@ -31,7 +31,7 @@
         </thead>
     </table
 </div>
-<? var_dump($users)?>
+<? //var_dump($users)?>
 <? foreach ($users as $index=> $user):?>
   <?=$user->name?>
 <? endforeach;?>

@@ -39,12 +39,11 @@ class MainController extends Controller
 
     public function actionPacks()
     {
-        $packs = $this->packs;
-        $resource = new Resource();
+        //$packs = $this->packs;
+       // $resource = new Resource();
         $type = Yii::$app->request->get('type');
         return $this->render('packs',
             [
-
                 'packs' => Packs::findOne($type)
             ]
         );
