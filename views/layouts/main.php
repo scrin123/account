@@ -27,11 +27,11 @@ AppAsset::register($this);
 <body>
 <div>
     <ul class="nav nav-tabs">
-        <li class="nav-item" data-name="index">
+        <li class="nav-item<? if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='index'):?><?=' active'?><? endif;?>" data-name="index">
             <a class="nav-link" data-name="index">Рассчет паков</a>
         </li>
         <li class="nav-item" data-name="add">
-            <a class="nav-link" data-name="add" >Добавить пак</a>
+            <a class="nav-link<?if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='add'):?><?=' active'?><? endif;?>" data-name="add" >Добавить пак</a>
         </li>
     </ul>
 
@@ -50,6 +50,7 @@ AppAsset::register($this);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <?$this->registerJsFile('js/main.js');?>
+<?$this->registerJsFile('js/packs.js');?>
 </body>
 </html>
 <?php $this->endPage() ?>

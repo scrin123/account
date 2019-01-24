@@ -12,7 +12,7 @@ use app\models\User;
 use app\models\Packs;
 use app\models\Resource;
 
-class MainController extends Controller
+class PacksController extends Controller
 {
     protected $packs;
 
