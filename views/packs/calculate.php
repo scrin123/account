@@ -1,7 +1,7 @@
 <?php
             use yii\helpers\Html;
             use yii\widgets\ActiveForm;
-            $this->registerCssFile('css/main.css');
+            $this->registerCssFile('css/packs.css');
 ?>
 <html>
     <title>

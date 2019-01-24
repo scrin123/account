@@ -17,7 +17,7 @@
         ?>
         <? foreach ($packs as $key => $value): ?>
             <tr>
-                <td><a href="index.php?r=main%2Fpacks&type=<?=$value->packs_id ?>" style="font-size: 16px"><?= $value->name ?></a></td>
+                <td><a href="index.php?r=packs%2Fpacks&type=<?=$value->packs_id ?>" style="font-size: 16px"><?= $value->name ?></a></td>
                 <td><?= ($value->grana*($users->leveloftrade+8)*0.00397)+$value->grana ?> </td>
                 <td><?= ($value->old_wind*($users->leveloftrade+8)*0.00397)+$value->old_wind ?> </td>
                 <td><?= ($value->trent*($users->leveloftrade+8)*0.00397)+$value->trent ?> </td>

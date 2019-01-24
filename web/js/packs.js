@@ -9,7 +9,7 @@ class Packs{
             data: data,
             success: function (data) {
                 console.log(data);
-            },
+            }
         });
     }
 
@@ -25,8 +25,9 @@ class Packs{
 
 $(document).ready(function () {
 
-
+    let packs= new Packs();
     $('.reprice').click(function () {
+        packs.send('/web/index.php?r=packs%2Fpacks&type=1','asdasd');
         console.log('CONSOLE');
     });
 
