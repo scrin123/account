@@ -39,8 +39,6 @@ class PacksController extends Controller
 
     public function actionPacks()
     {
-        //$packs = $this->packs;
-       // $resource = new Resource();
         $type = Yii::$app->request->get('type');
         return $this->render('packs',
             [
@@ -48,9 +46,24 @@ class PacksController extends Controller
             ]
         );
     }
+
     public function actionAdd()
     {
         return $this->render('add');
+    }
+
+    public function actionReprice()
+    {
+        $id = 1;
+        $price = 6000;
+        $packs = Packs::findOne('name=Steel Ingot');
+//        foreach ($packs->resource as $resource) {
+//            if ($resource->price >= 3000) {
+//                echo $resource->name.$resource->price;
+//            }
+//
+//        }
+        var_dump($packs);
     }
 
 }

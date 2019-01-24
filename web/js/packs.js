@@ -1,16 +1,22 @@
 'use strict';
-
+include('jquery.js');
 class Packs{
 
     send(url,data){
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: data,
-            success: function (data) {
-                console.log(data);
-            }
-        });
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/server', true);
+        xhr.onload = function () {
+            console.log(xhr.send())
+            // Запрос завершен. Здесь можно обрабатывать результат.
+        };
+        // $.ajax({
+        //     type: "POST",
+        //     url: url,
+        //     data: data,
+        //     success: function (data) {
+        //         console.log(data);
+        //     }
+        // });
     }
 
 
