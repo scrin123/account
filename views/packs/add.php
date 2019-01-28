@@ -41,7 +41,7 @@ use yii\helpers\Html;
 
 </div>
 
-<?= Html::submitButton('Обновить', ['class' => 'btn btn-primary']) ?>
+<?= Html::submitButton('Добавить', ['class' => 'btn btn-primary']) ?>
 
 <?php ActiveForm::end() ?>
 

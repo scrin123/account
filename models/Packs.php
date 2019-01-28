@@ -70,6 +70,14 @@ class Packs extends ActiveRecord
     {
         return $price = $count * $price;
     }
+    static function calculatePriceByLvlTrade($price,$lvl)
+    {
+       return ($price * ($lvl + 8) * 0.00397) + $price;
+    }
+    static function calculateProfit($price,$costs)
+    {
+        return $price-$costs;
+    }
 }
 
 

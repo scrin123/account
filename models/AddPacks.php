@@ -19,5 +19,6 @@ class AddPacks extends Model
     public $trent;
     public $epheria;
     public $calf;
+    public $type;
 
 }

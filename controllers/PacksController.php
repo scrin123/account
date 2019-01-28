@@ -13,6 +13,7 @@ use app\models\Packs;
 use app\models\Resource;
 use app\models\PacksForm;
 use app\models\AddPacks;
+
 class PacksController extends Controller
 {
     protected $packs;
@@ -43,18 +44,18 @@ class PacksController extends Controller
     public function actionPacks()
     {
         $type = Yii::$app->request->get('type');
-        $PacksForm= new PacksForm();
+        $PacksForm = new PacksForm();
         $user = new User();
-        if($PacksForm->load(\Yii::$app->request->post())){
-          $res=Resource::find()->where(['name'=>Yii::$app->request->post('PacksForm')['packs']])->one();
-          $res->price=Yii::$app->request->post('PacksForm')["price"];
-          $res->save();
+        if ($PacksForm->load(\Yii::$app->request->post())) {
+            $res = Resource::find()->where(['name' => Yii::$app->request->post('PacksForm')['packs']])->one();
+            $res->price = Yii::$app->request->post('PacksForm')["price"];
+            $res->save();
             return $this->render('packs',
                 [
                     'users' => $user::findOne(1),
                     'packs' => $this->packs->findResPack($type),
-                    'name'=>Packs::findOne($type),
-                    'packsform'=>$PacksForm,
+                    'name' => Packs::findOne($type),
+                    'packsform' => $PacksForm,
                 ]
             );
         }
@@ -62,24 +63,33 @@ class PacksController extends Controller
             [
                 'users' => $user::findOne(1),
                 'packs' => $this->packs->findResPack($type),
-                'name'=>Packs::findOne($type),
-                'packsform'=>$PacksForm,
+                'name' => Packs::findOne($type),
+                'packsform' => $PacksForm,
             ]
         );
     }
 
     public function actionAdd()
     {
-        $AddPacks= new AddPacks();
-        return $this->render('add',
+        $AddPacks = new AddPacks();
+        $newpacks = new Packs();
+        if ($AddPacks->load(\Yii::$app->request->post())) {
+            $newpacks->name = Yii::$app->request->post('AddPacks')['namepacks'];
+            $newpacks->grana = Yii::$app->request->post('AddPacks')['grana'];
+            $newpacks->old_wind = Yii::$app->request->post('AddPacks')['old_windom'];
+            $newpacks->trent = Yii::$app->request->post('AddPacks')['trent'];
+            $newpacks->epheria = Yii::$app->request->post('AddPacks')['epheria'];
+            $newpacks->calf = Yii::$app->request->post('AddPacks')['calf'];
+            $newpacks->type=1;
+            $newpacks->save();
+        }else{
+            return $this->render('add',
             [
-                //'users' => $user::findOne(1),
-               // 'packs' => $this->packs->findResPack($type),
-                //'name'=>Packs::findOne($type),
-                'packsform'=>$AddPacks
+                'packsform' => $AddPacks
             ]
         );
-       // return $this->render('add');
+
+        }
     }
 
     public function actionReprice()
@@ -100,8 +110,8 @@ class PacksController extends Controller
 //                    $value->save();
 //                }
 
-                //echo $resource->name.$resource->price;
-         //   }
+            //echo $resource->name.$resource->price;
+            //   }
 
         }
         var_dump($this->packs->findResPack(2)->limit(1));

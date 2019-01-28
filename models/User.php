@@ -15,7 +15,17 @@ class User extends ActiveRecord {
     {
         return 'user';
     }
-    public static function search(){
-        
+
+    public function getId()
+    {
+        return $this->id;
     }
+    public function validatePassword($password)
+    {
+        return $this->password === $password;
+    }
+
+
+
+
 }

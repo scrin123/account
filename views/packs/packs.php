@@ -32,24 +32,24 @@ use yii\helpers\Html;
             <div>
                 <h2>Выгода:</h2>
                 <p>С
-                    Граны:<? if (((($name->grana * ($users->leveloftrade + 8) * 0.00397) + $name->grana) - $price) <= 0): ?>НЕ ВЫГОДНО<?
-                    else: ?>-Выгодно:Прибыль=<?= (($name->grana * ($users->leveloftrade + 8) * 0.00397) + $name->grana) - $price ?>
+                    Граны:<? if (Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->grana,$users->leveloftrade),$price) <= 0): ?>НЕ ВЫГОДНО<?
+                    else: ?>-Выгодно:Прибыль=<?= Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->grana,$users->leveloftrade),$price)?>
                     <? endif; ?></p>
                 <p>С Old
-                    windom<? if ((($name->old_wind * ($users->leveloftrade + 8) * 0.00397) + $name->old_wind) - $price <= 0): ?>НЕ ВЫГОДНО<?
-                    else: ?>-Выгодно:Прибыль=<?= (($name->old_wind * ($users->leveloftrade + 8) * 0.00397) + $name->old_wind) - $price ?>
+                    windom<? if (Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->old_wind,$users->leveloftrade),$price) <= 0): ?>НЕ ВЫГОДНО<?
+                    else: ?>-Выгодно:Прибыль=<?= Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->old_wind,$users->leveloftrade),$price)?>
                     <? endif; ?></p>
                 <p>С
-                    Трента:<? if ((($name->trent * ($users->leveloftrade + 8) * 0.00397) + $name->trent) - $price <= 0): ?>НЕ ВЫГОДНО<?
-                    else: ?>-Выгодно:Прибыль=<?= (($name->trent * ($users->leveloftrade + 8) * 0.00397) + $name->trent) - $price ?>
+                    Трента:<? if (Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->trent,$users->leveloftrade),$price)<= 0): ?>НЕ ВЫГОДНО<?
+                    else: ?>-Выгодно:Прибыль=<?= Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->trent,$users->leveloftrade),$price)?>
                     <? endif; ?></p>
                 <p>С
-                    Эферия:<? if ((($name->epheria * ($users->leveloftrade + 8) * 0.00397) + $name->epheria) - $price <= 0): ?>НЕ ВЫГОДНО<?
-                    else: ?>-Выгодно:Прибыль=<?= (($name->epheria * ($users->leveloftrade + 8) * 0.00397) + $name->epheria) - $price ?>
+                    Эферия:<? if (Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->epheria,$users->leveloftrade),$price) <= 0): ?>НЕ ВЫГОДНО<?
+                    else: ?>-Выгодно:Прибыль=<?= Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->epheria,$users->leveloftrade),$price)?>
                     <? endif; ?></p>
                 <p>С
-                    Кальфеон:<? if ((($name->calf * ($users->leveloftrade + 8) * 0.00397) + $name->calf) - $price <= 0): ?>НЕ ВЫГОДНО<?
-                    else: ?>-Выгодно:Прибыль=<?= (($name->calf * ($users->leveloftrade + 8) * 0.00397) + $name->calf) - $price ?>
+                    Кальфеон:<? if (Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->calf,$users->leveloftrade),$price) <= 0): ?>НЕ ВЫГОДНО<?
+                    else: ?>-Выгодно:Прибыль=<?= Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->calf,$users->leveloftrade),$price)?>
                     <? endif; ?></p>
             </div>
         </div>
@@ -68,20 +68,6 @@ use yii\helpers\Html;
 
         <?php ActiveForm::end() ?>
 
-        <!--        <form class="form-inline">-->
-        <!--            <label class="sr-only" for="inlineFormInputName2">Имя ресурса</label>-->
-        <!--            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="-->
-        <? //= $name->name ?><!--">-->
-        <!---->
-        <!--            <label class="sr-only" for="inlineFormInputGroupUsername2">Цена ресурса</label>-->
-        <!--            <div class="input-group mb-2 mr-sm-2">-->
-        <!--                <div class="input-group-prepend">-->
-        <!--                </div>-->
-        <!--                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="-->
-        <? //=$priceres?><!--">-->
-        <!--            </div>-->
-        <!--            <button type="button" class="btn btn-primary mb-2 reprice">Пересчитать</button>-->
-        <!--        </form>-->
     </div>
 </div>
 

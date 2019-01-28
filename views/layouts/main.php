@@ -32,6 +32,7 @@ AppAsset::register($this);
         </li>
         <li class="nav-item" data-name="add">
             <a class="nav-link<?if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='add'):?><?=' active'?><? endif;?>" data-name="add" >Добавить пак</a>
+
         </li>
     </ul>
 
