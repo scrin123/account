@@ -5,7 +5,7 @@ use app\models\Resource;
 use app\models\Packs;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
-
+use yii\helpers\Calculate;
 ?>
 <div class="container">
     <div class="row">
@@ -32,24 +32,24 @@ use yii\helpers\Html;
             <div>
                 <h2>Выгода:</h2>
                 <p>С
-                    Граны:<? if (Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->grana,$users->leveloftrade),$price) <= 0): ?>НЕ ВЫГОДНО<?
-                    else: ?>-Выгодно:Прибыль=<?= Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->grana,$users->leveloftrade),$price)?>
+                    Граны:<? if (Calculate::calculateProfit(Calculate::calculatePriceByLvlTrade($name->grana,$users->leveloftrade),$price) <= 0): ?>НЕ ВЫГОДНО<?
+                    else: ?>-Выгодно:Прибыль=<?= Calculate::calculateProfit(Calculate::calculatePriceByLvlTrade($name->grana,$users->leveloftrade),$price)?>
                     <? endif; ?></p>
                 <p>С Old
-                    windom<? if (Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->old_wind,$users->leveloftrade),$price) <= 0): ?>НЕ ВЫГОДНО<?
-                    else: ?>-Выгодно:Прибыль=<?= Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->old_wind,$users->leveloftrade),$price)?>
+                    windom<? if (Calculate::calculateProfit(Calculate::calculatePriceByLvlTrade($name->old_wind,$users->leveloftrade),$price) <= 0): ?>НЕ ВЫГОДНО<?
+                    else: ?>-Выгодно:Прибыль=<?=Calculate::calculateProfit(Calculate::calculatePriceByLvlTrade($name->old_wind,$users->leveloftrade),$price)?>
                     <? endif; ?></p>
                 <p>С
-                    Трента:<? if (Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->trent,$users->leveloftrade),$price)<= 0): ?>НЕ ВЫГОДНО<?
-                    else: ?>-Выгодно:Прибыль=<?= Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->trent,$users->leveloftrade),$price)?>
+                    Трента:<? if (Calculate::calculateProfit(Calculate::calculatePriceByLvlTrade($name->trent,$users->leveloftrade),$price)<= 0): ?>НЕ ВЫГОДНО<?
+                    else: ?>-Выгодно:Прибыль=<?= Calculate::calculateProfit(Calculate::calculatePriceByLvlTrade($name->trent,$users->leveloftrade),$price)?>
                     <? endif; ?></p>
                 <p>С
-                    Эферия:<? if (Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->epheria,$users->leveloftrade),$price) <= 0): ?>НЕ ВЫГОДНО<?
-                    else: ?>-Выгодно:Прибыль=<?= Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->epheria,$users->leveloftrade),$price)?>
+                    Эферия:<? if (Calculate::calculateProfit(Calculate::calculatePriceByLvlTrade($name->epheria,$users->leveloftrade),$price) <= 0): ?>НЕ ВЫГОДНО<?
+                    else: ?>-Выгодно:Прибыль=<?= Calculate::calculateProfit(Calculate::calculatePriceByLvlTrade($name->epheria,$users->leveloftrade),$price)?>
                     <? endif; ?></p>
                 <p>С
-                    Кальфеон:<? if (Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->calf,$users->leveloftrade),$price) <= 0): ?>НЕ ВЫГОДНО<?
-                    else: ?>-Выгодно:Прибыль=<?= Packs::calculateProfit(Packs::calculatePriceByLvlTrade($name->calf,$users->leveloftrade),$price)?>
+                    Кальфеон:<? if (Calculate::calculateProfit(Calculate::calculatePriceByLvlTrade($name->calf,$users->leveloftrade),$price) <= 0): ?>НЕ ВЫГОДНО<?
+                    else: ?>-Выгодно:Прибыль=<?= Calculate::calculateProfit(Calculate::calculatePriceByLvlTrade($name->calf,$users->leveloftrade),$price)?>
                     <? endif; ?></p>
             </div>
         </div>

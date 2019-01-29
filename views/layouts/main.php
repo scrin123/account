@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\helpers\BaseHtml;
 
 AppAsset::register($this);
 ?>
@@ -26,15 +27,23 @@ AppAsset::register($this);
 </head>
 <body>
 <div>
-    <ul class="nav nav-tabs">
-        <li class="nav-item<? if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='index'):?><?=' active'?><? endif;?>" data-name="index">
-            <a class="nav-link" data-name="index">Рассчет паков</a>
-        </li>
-        <li class="nav-item" data-name="add">
-            <a class="nav-link<?if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='add'):?><?=' active'?><? endif;?>" data-name="add" >Добавить пак</a>
-
-        </li>
+    <ul class="nav nav-pills">
+        <li role="presentation" class="<? if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='index'):?><?=' active'?><? endif;?>"><?= BaseHtml::a('Рассчет паков','/web/index.php?r=packs%2Findex')?>
+        <li role="presentation" class="<? if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='add'):?><?=' active'?><? endif;?>"><?= BaseHtml::a('Добавить пак', ['packs/add']) ?></li>
+        <li role="presentation" class="<? if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='blackpowder'):?><?=' active'?><? endif;?>" ><?= BaseHtml::a('Рассчитать порошок', ['proc/blackpowder']) ?></li>
     </ul>
+<!--    <ul class="nav nav-tabs">-->
+<!--            <a class="nav-link" data-name="index">Рассчет паков</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item" data-name="add">-->
+<!--            <a class="nav-link--><?//if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='add'):?><!----><?//=' active'?><!----><?// endif;?><!--" data-name="add" >Добавить пак</a>-->
+<!---->
+<!--        </li>-->
+<!--        <li class="nav-item" data-name="add">-->
+<!--            <a class="nav-link--><?//if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='blackpowder'):?><!----><?//=' active'?><!----><?// endif;?><!--" data-name="blackpowder" >Рассчитать порошок</a>-->
+<!---->
+<!--        </li>-->
+<!--    </ul>-->
 
 </div>
 
