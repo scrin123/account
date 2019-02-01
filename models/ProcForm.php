@@ -13,5 +13,6 @@ class ProcForm extends Model
 {
 
     public $nameRes;
+    public $price;
     public $quantity;
 }

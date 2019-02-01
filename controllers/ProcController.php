@@ -13,12 +13,17 @@ use yii\web\Controller;
 
 class ProcController extends Controller
 {
-        public function actionsBlackpowder()
-        {
-            $procModel= new ProcForm() ;
-            return $this->render('blackpowder',
-                [
-                    'proc'=>$procModel
-                ]);
-        }
+    public $layout = 'main';
+
+    public function actionsBlackpowder()
+    {
+        $procModel = new ProcForm();
+
+
+        return $this->render('blackpowder',
+            [
+                'proccesing' => $procModel
+            ]);
+    }
+
 }

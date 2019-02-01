@@ -15,7 +15,7 @@ use yii\helpers\Calculate;
                 <? $price = 0;
                 foreach ($packs as $key => $value): ?>
                     <h5><?= $value['name'] ?> Колличество-<?= $value['quantity'] ?> Цена ресурса на 1 пак=
-                        <? $price = $price + Packs::calculatePrice($value['quantity'], $value['price']) ?>
+                        <? $price = $price + Calculate::calculatePrice($value['quantity'], $value['price']) ?>
                         <? if ($value['price'] >= 3000): ?>
                             <? $priceres = $value['price']; ?>
                             <?= $value['price'] * $value['quantity'] ?>
