@@ -8,7 +8,7 @@
 
 namespace app\controllers;
 
-use app\models\ProcForm;
+use app\models\Forms\ProcForm;
 use yii\web\Controller;
 
 class ProcController extends Controller

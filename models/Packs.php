@@ -8,6 +8,7 @@ use yii\db\ActiveRecord;
 use app\models\Resource;
 use app\models\Type;
 use app\models\Respacks;
+use app\models\additionalModel\Packstype;
 use yii\db\Query;
 
 

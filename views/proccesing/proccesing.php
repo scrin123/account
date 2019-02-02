@@ -20,7 +20,9 @@ use yii\helpers\Calculate;
 </div>
 <?if(Calculate::calculateProcessing($quntity)*2750 <$price*$quntity): ?>
 <h3>Не выгодно</h3>
+<?= Calculate::calculateProcessing($quntity)*2750?>
 <?else:?>
 <h3>Выгодно</h3>
+
 <? endif;?>
 

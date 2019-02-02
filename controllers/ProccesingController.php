@@ -11,9 +11,9 @@ use yii\filters\VerbFilter;
 use app\models\User;
 use app\models\Packs;
 use app\models\Resource;
-use app\models\PacksForm;
-use app\models\AddPacks;
-use app\models\ProcForm;
+use app\models\Forms\PacksForm;
+use app\models\Forms\AddPacks;
+use app\models\Forms\ProcForm;
 use yii\helpers\Calculate;
 class ProccesingController extends Controller
 {

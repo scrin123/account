@@ -6,7 +6,7 @@
  * Time: 0:33
  */
 
-namespace app\models;
+namespace app\models\additionalModel;
 use yii\base\Model;
 
 class User_packs extends  Model

@@ -6,7 +6,7 @@
  * Time: 20:07
  */
 
-namespace app\models;
+namespace app\models\Forms;
 
 use yii\base\Model;
 class ProcForm extends Model
