@@ -25,7 +25,7 @@ class CustomerController extends Controller
             $user = new User();
             $userid=1;
             $QuantityForm= new Quntity_packsForm();
-            var_dump(\Yii::$app->request->post());
+           // var_dump(\Yii::$app->request->post());
             return $this->render('lk',
                 [
                     'packs'=>$user->findUserPacks(1),

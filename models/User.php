@@ -5,12 +5,15 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\db\ActiveRecord;
-use app\models\User_packs;
+use app\models\additionalModel\User_packs;
 use yii\db\Query;
+use yii\web\IdentityInterface;
+
 /**
  * ContactForm is the model behind the contact form.
  */
-class User extends ActiveRecord {
+class User extends ActiveRecord implements IdentityInterface
+{
 
     protected $query;
 
@@ -30,7 +33,15 @@ class User extends ActiveRecord {
     }
     public function validatePassword($password)
     {
-        return $this->password === $password;
+        if($this->password === $password)
+        {
+            return true;
+
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public function getAddPacks()
@@ -56,8 +67,29 @@ class User extends ActiveRecord {
         return $rows;
     }
 
+    public static function findIdentity($id)
+    {
+        return User::findOne($id);
+    }
+
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+        // TODO: Implement findIdentityByAccessToken() method.
+    }
 
 
+    public function getAuthKey()
+    {
+        // TODO: Implement getAuthKey() method.
+    }
 
 
+    public function validateAuthKey($authKey)
+    {
+        // TODO: Implement validateAuthKey() method.
+    }
+    public static function findByUsername($username)
+    {
+        return User::find()->where(['name' => $username])->one();
+    }
 }
