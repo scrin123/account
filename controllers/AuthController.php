@@ -31,6 +31,16 @@ class AuthController extends Controller
 
         );
     }
+    public function actionLogout()
+    {
+        $model = new LoginForm();
+        YII::$app->user->logout();
+        return $this->render('login', [
+                'model' => $model
+            ]
+
+        );
+    }
 
 
 //    public function actionTest()

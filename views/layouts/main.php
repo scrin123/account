@@ -32,6 +32,7 @@ AppAsset::register($this);
         <li role="presentation" class="<? if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='add'):?><?=' active'?><? endif;?>"><?= BaseHtml::a('Добавить пак', ['packs/add']) ?></li>
         <li role="presentation" class="<? if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='proc'):?><?=' active'?><? endif;?>" ><?= BaseHtml::a('Рассчитать порошок', ['proccesing/proc']) ?></li>
         <li role="presentation" class="<? if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='lk'):?><?=' active'?><? endif;?>" ><?= BaseHtml::a('Личный кабинет', ['customer/lk']) ?></li>
+        <li role="presentation" class="<? if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='logout'):?><?=' active'?><? endif;?>" ><?= BaseHtml::a('Logout', ['auth/logout']) ?></li>
     </ul>
 <!--    <ul class="nav nav-tabs">-->
 <!--            <a class="nav-link" data-name="index">Рассчет паков</a>-->
