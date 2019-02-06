@@ -1,5 +1,5 @@
 <?php
-use yii\helpers\Calculate;
+use app\models\helpers\Calculate;
 ?>
 <div>
     <h4>Вы зашли как,<?= $users->name ?>. Данные по пакам для уровня торговки=<?=$users->leveloftrade ?></h4>

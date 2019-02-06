@@ -5,7 +5,7 @@ use app\models\Resource;
 use app\models\Packs;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
-use yii\helpers\Calculate;
+use app\models\helpers\Calculate;
 ?>
 <div class="container">
     <div class="row">
