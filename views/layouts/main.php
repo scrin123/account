@@ -30,7 +30,7 @@ AppAsset::register($this);
     <ul class="nav nav-pills">
         <li role="presentation" class="<? if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='index'):?><?=' active'?><? endif;?>"><?= BaseHtml::a('Рассчет паков','/web/index.php?r=packs%2Findex')?>
         <li role="presentation" class="<? if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='add'):?><?=' active'?><? endif;?>"><?= BaseHtml::a('Добавить пак', ['packs/add']) ?></li>
-        <li role="presentation" class="<? if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='proc'):?><?=' active'?><? endif;?>" ><?= BaseHtml::a('Рассчитать порошок', ['proccesing/proc']) ?></li>
+<!--        <li role="presentation" class="--><?// if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='proc'):?><!----><?//=' active'?><!----><?// endif;?><!--" >--><?//= BaseHtml::a('Рассчитать порошок', ['proccesing/proc']) ?><!--</li>-->
         <li role="presentation" class="<? if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='lk'):?><?=' active'?><? endif;?>" ><?= BaseHtml::a('Личный кабинет', ['customer/lk']) ?></li>
         <li role="presentation" class="<? if( substr(stristr($_SERVER['REQUEST_URI'],'F'),1)==='logout'):?><?=' active'?><? endif;?>" ><?= BaseHtml::a('Logout', ['auth/logout']) ?></li>
     </ul>
