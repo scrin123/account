@@ -46,4 +46,3 @@ use yii\helpers\Calculate;
         <?php ActiveForm::end() ?>
     </div>
 </div>
-<? var_dump($packs)?>
